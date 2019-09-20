@@ -44,9 +44,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('unfavorite', 'WorksController@destroy')->name('works.unfavorite');
     });
 
-// 作品の登録
+// 作品の登録と削除
     Route::get('worksInput', 'WorksController@index')->name('works.index');
-    Route::post('worksPost', 'WorksController@post')->name('works.post');
+    Route::post('worksShow', 'WorksController@show')->name('works.show');
+    Route::get('worksCreate/{keyword}/{itemCode}', 'WorksController@create')->name('works.create');
+    Route::post('worksStore', 'WorksController@store')->name('works.store');
     Route::delete('worksDestroy', 'WorksController@destroy')->name('works.destroy');
     
 // コメントの登録

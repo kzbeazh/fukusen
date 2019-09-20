@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>作品を投稿しようよ！みんな！</h1>
+    <h1>伏線作品を探そう！</h1>
+    
+    <div class="row">
+        <div class="col-6">
+            {!! Form::open(['route' => 'works.show']) !!}
+                <div class="form-group">
+                    {!! Form::label('keyword', '検索キーワード：') !!}
+                    {!! Form::text('keyword', null, ['class' => 'form-control']) !!}
+                </div>
+                {!! Form::submit('検索', ['class' => 'btn btn-primary btn-block']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
 @endsection

@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    
+    //作品との1対多
+    public function works()
+    {
+        return $this->hasMany(Work::class);
+    }
 }
