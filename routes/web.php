@@ -12,7 +12,7 @@
 */
 
 //トップ画面
-Route::get('/', 'FukusenController@index');
+Route::get('/', 'FukusenController@index')->name('top.index');;
 
 
 // ユーザ登録
@@ -55,5 +55,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('commentsInput', 'CommentsController@show')->name('comments.show');
     Route::post('commentsPost', 'CommentsController@post')->name('comments.post');
     Route::delete('commentsDestroy', 'CommentsController@destroy')->name('comments.destroy');
-
+    
+// コメントの登録
+    Route::get('kindsChoto', 'KindsController@choto')->name('kinds.choto');
+    Route::get('kindsSaigo', 'KindsController@saigo')->name('kinds.saigo');
+    Route::get('kindsImifu', 'KindsController@imifu')->name('kinds.imifu');
+    
 });

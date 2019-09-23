@@ -19,9 +19,9 @@ class CreateWorksTable extends Migration
             
             //作品投稿用
             $table->integer('worksFukusendo');
-            $table->integer('worksKind');
-            $table->integer('worksCategory');
-            $table->integer('worksMunakuso');
+            $table->string('worksKind');
+            $table->string('worksCategory');
+            $table->string('worksMunakuso');
             $table->string('worksComment');
             $table->string('itemName');
             $table->string('imageUrl');

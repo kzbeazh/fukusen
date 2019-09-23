@@ -6,8 +6,38 @@ use Illuminate\Http\Request;
 
 use App\Work;    // 追加
 
-class FukusenController extends Controller
+class KindsController extends Controller
 {
+
+    public function choto()
+    {
+        $works = Work::where('worksCategory', "ちょくちょく回収型")->orderBy('created_at', 'desc')->paginate(); 
+ 
+        return view('kinds.kindsChoto', [
+            'works' => $works,
+        ]);
+    }
+    
+    public function saigo()
+    {
+        $works = Work::where('worksCategory', "最後にドカン型")->orderBy('created_at', 'desc')->paginate(); 
+ 
+        return view('kinds.kindsSaigo', [
+            'works' => $works,
+        ]);
+    }
+    
+    public function imifu()
+    {
+        $works = Work::where('worksCategory', "意味不明型")->orderBy('created_at', 'desc')->paginate(); 
+ 
+        return view('kinds.kindsImifu', [
+            'works' => $works,
+        ]);
+    }
+ 
+///////////////////////////////////////////////////////
+
     /**
      * Display a listing of the resource.
      *
@@ -16,17 +46,6 @@ class FukusenController extends Controller
     public function index()
     {
         //
-        if (\Auth::check()) {
-            $works = Work::orderBy('created_at', 'desc')->paginate();
-        }
-        
-        else{
-            $works = Work::orderBy('created_at', 'desc')->paginate(3); 
-        }
-        
-        return view('welcome', [
-            'works' => $works,
-        ]);
     }
 
     /**
