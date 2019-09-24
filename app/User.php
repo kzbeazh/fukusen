@@ -83,4 +83,28 @@ class User extends Authenticatable
     {
         return $this->followings()->where('follow_id', $userId)->exists();
     }
+    
+    //お気に入り機能
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Work::class, 'favorites', 'user_id', 'work_id')->withTimestamps();
+    }
+
+//お気に入りの追加、解除
+    public function favorite($workId)
+    {
+        return $this->favorites()->attach($workId);
+    }
+    
+    public function unfavorite($workId)
+    {
+        return $this->favorites()->detach($workId);
+    }
+
+    public function is_favorite($workId)
+    {
+        return $this->favorites()->where('work_id', $workId)->exists();
+    }
+    
 }

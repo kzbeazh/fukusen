@@ -1,3 +1,4 @@
+
 .container {
   box-shadow: 0px 0px 0px gray;
   padding-right: 0px;
@@ -8,8 +9,8 @@
   background: linear-gradient(25deg, rgba(255, 0, 0, 0.4), rgba(0, 255, 0, 0.4)),url("https://oday.okinawa/wp-content/uploads/2016/04/20160427000.jpg");
   background-size: cover;
   text-align: center;
-  color: white;
   border-radius: 0px;
+  box-shadow: 2px 2px 4px gray;
 }
 
 .jumbotron h1 {
@@ -21,15 +22,18 @@
   font-size: 30px;
   margin-bottom: 20px;
   text-shadow:1px 3px 3px #513c3c;
+  color: white;
+}
+
+.jumbotron h3 {
+  text-shadow:1px 3px 3px #513c3c;
+  color: white;
 }
 
 .jumbotron p {
   margin: 0px;
   text-shadow:1px 1px 1px #513c3c;
-}
-
-.navbar-brand{
-    color:white; 
+  color: white;
 }
 
 .btn-sticky {
@@ -51,9 +55,8 @@
 複数行のコメント*/
 .message-wrapper,
 .step-wrapper {
-  text-align: center;
-  background-color: white;
   padding: 20px;
+  text-align: center;
 }
 
 img {
@@ -87,6 +90,7 @@ img {
   margin: 10px;
   text-align: center;
   background-color: #e8faff;
+
 }
 
 .my-parts {
@@ -113,4 +117,13 @@ hr {
   border: none;
   color: #d1d1d1;
   width:70%;
+}
+
+.works {
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+}
+
+.each {
+  box-shadow: 2px 2px 4px gray;
 }

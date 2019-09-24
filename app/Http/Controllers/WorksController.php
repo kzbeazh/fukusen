@@ -13,6 +13,7 @@ class WorksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
     public function index()
     {
         //
@@ -168,6 +169,17 @@ class WorksController extends Controller
     {
         //
     }
+
+    public function detail($id)
+    {
+        //
+        $work= Work::find($id);
+
+        return view('works.detail', [
+            'work' => $work,
+        ]);
+    }
+
     
 //関数//
     

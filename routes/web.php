@@ -40,8 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
     
 // ユーザーが作品お気に入りに入れる/外す
     Route::group(['prefix' => 'works/{id}'], function () {
-        Route::post('favorite', 'WorksController@store')->name('works.favorite');
-        Route::delete('unfavorite', 'WorksController@destroy')->name('works.unfavorite');
+        Route::post('favorite', 'FavoritesController@store')->name('works.favorite');
+        Route::delete('unfavorite', 'FavoritesController@destroy')->name('works.unfavorite');
     });
 
 // 作品の登録と削除
@@ -50,13 +50,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('worksCreate/{keyword}/{itemCode}', 'WorksController@create')->name('works.create');
     Route::post('worksStore', 'WorksController@store')->name('works.store');
     Route::delete('worksDestroy', 'WorksController@destroy')->name('works.destroy');
+    Route::get('worksDetail/{id}', 'WorksController@detail')->name('works.detail');
+    
     
 // コメントの登録
-    Route::get('commentsInput', 'CommentsController@show')->name('comments.show');
-    Route::post('commentsPost', 'CommentsController@post')->name('comments.post');
-    Route::delete('commentsDestroy', 'CommentsController@destroy')->name('comments.destroy');
+//    Route::get('commentsInput', 'CommentsController@show')->name('comments.show');
+//    Route::post('commentsPost', 'CommentsController@post')->name('comments.post');
+//    Route::delete('commentsDestroy', 'CommentsController@destroy')->name('comments.destroy');
     
-// コメントの登録
+// 種類ごとの表示
     Route::get('kindsChoto', 'KindsController@choto')->name('kinds.choto');
     Route::get('kindsSaigo', 'KindsController@saigo')->name('kinds.saigo');
     Route::get('kindsImifu', 'KindsController@imifu')->name('kinds.imifu');
