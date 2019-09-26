@@ -19,4 +19,11 @@ class Work extends Model
     {
         return $this->belongsToMany(User::class, 'favorites', 'micropost_id', 'user_id')->withTimestamps();
     }
+    
+//コメントとの1対多    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

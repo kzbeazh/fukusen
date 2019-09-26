@@ -15,6 +15,11 @@
         @include('commons.error_messages')
         @yield('content')
         
+        <br>
+        <hr>
+        <h5 style="text-align: center; color: gray; font-size: 15px;">©Copyright 2019 Fukusensugee.work All Rights Reserved.</h5>
+        <br>        
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

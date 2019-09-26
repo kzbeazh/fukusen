@@ -12,9 +12,7 @@
                 @include('eachWorks.eachWorks')
             </div>
         </div>
-        <br>
-        <hr>
-        <br>
+
     @else
         <div class="top-wrapper">
             <div class="jumbotron">
@@ -94,8 +92,5 @@
             </div>
         </div>
         
-        <br>
-        <hr>
-        <br>
     @endif
 @endsection

@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email', 191)->unique();
             $table->string('password');
+            $table->string('profUrl')->default('https://1.bp.blogspot.com/-4PxfPaQV_YQ/UX-OUxD7rDI/AAAAAAAAQ28/ksJloFBsE94/s1600/animal_hamster.png');
             $table->rememberToken();
             $table->timestamps();
         });

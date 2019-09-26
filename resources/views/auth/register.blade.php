@@ -29,8 +29,7 @@
                         {!! Form::label('password_confirmation', 'パスワードもう一回　(ごめん！)') !!}
                         {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                     </div>
-    
-                    {!! Form::submit('ユーザー登録', ['class' => 'btn btn-primary btn-block']) !!}
+                   {!! Form::submit('ユーザー登録', ['class' => 'btn btn-primary btn-block']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

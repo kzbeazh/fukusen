@@ -12,8 +12,6 @@
                 @include('eachWorks.eachWorks')
             </div>
         </div>
-        <br>
-        <hr>
-        <br>
+
 @endsection
 

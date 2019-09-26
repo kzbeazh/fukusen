@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Work;    // 追加
 
+use App\Comment;
+
 class WorksController extends Controller
 {
     /**
@@ -168,17 +170,62 @@ class WorksController extends Controller
     public function destroy($id)
     {
         //
+        $work = Work::find($id);
+        $work->delete();
+        
+        return back();
+    }
+    
+    public function detaildestroy($id)
+    {
+        //
+        $comment = Comment::find($id);
+        $comment->delete();
+        
+        return back();
     }
 
     public function detail($id)
     {
         //
+        $data = [];
+        
         $work= Work::find($id);
 
-        return view('works.detail', [
+        $comments = $work->comments()->with('user')->orderBy('id', 'desc')->paginate();
+//        $comments =Comment::all();
+        
+//        dd($comments);
+        
+        $data = [
             'work' => $work,
-        ]);
+            'comments' => $comments,
+        ];
+
+
+        return view('works.detail', $data);
     }
+
+    public function detailStore(Request $request)
+    {
+        //
+        $this->validate($request, [
+            'workPost' => 'required|max:191',
+        ]);
+        
+        $comment = new Comment;
+        
+//      dd($request->workPost, $request->workId, \Auth::id());
+
+        $comment->work_id = $request->workId;
+        $comment->user_id = \Auth::id();
+        $comment->workPost =$request->workPost;
+        $comment->save();
+        
+//        dd($comment);
+                
+        return back();
+    }    
 
     
 //関数//
