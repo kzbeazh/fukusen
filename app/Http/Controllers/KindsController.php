@@ -11,7 +11,7 @@ class KindsController extends Controller
 
     public function choto()
     {
-        $works = Work::where('worksCategory', "ちょくちょく回収型")->orderBy('created_at', 'desc')->paginate(); 
+        $works = Work::where('worksCategory', "ちょくちょく回収型")->orderBy('created_at', 'desc')->paginate(6); 
  
         return view('kinds.kindsChoto', [
             'works' => $works,
@@ -20,7 +20,7 @@ class KindsController extends Controller
     
     public function saigo()
     {
-        $works = Work::where('worksCategory', "最後にドカン型")->orderBy('created_at', 'desc')->paginate(); 
+        $works = Work::where('worksCategory', "最後にドカン型")->orderBy('created_at', 'desc')->paginate(6); 
  
         return view('kinds.kindsSaigo', [
             'works' => $works,
@@ -29,7 +29,7 @@ class KindsController extends Controller
     
     public function imifu()
     {
-        $works = Work::where('worksCategory', "意味不明型")->orderBy('created_at', 'desc')->paginate(); 
+        $works = Work::where('worksCategory', "意味不明型")->orderBy('created_at', 'desc')->paginate(6); 
  
         return view('kinds.kindsImifu', [
             'works' => $works,

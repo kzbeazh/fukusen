@@ -1,3 +1,5 @@
+<br>
+<h1>ユーザー一覧</h1>
 <div class="row o-4column">
     @if (count($users) > 0)
         @foreach ($users as $user)

@@ -60,5 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("postadd", "PostsController@add");
     Route::post("postcreate", "PostsController@create");
     Route::put("postupdate/{id}", "PostsController@update")->name('post.update');
+    
+    Route::post('worksSearch', 'WorksController@worksshow')->name('works.search');
 
 });

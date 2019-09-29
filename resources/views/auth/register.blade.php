@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center">
-            <h1>ユーザー登録しよう！</h1>
+            <br>
+            <h1>ユーザー登録</h1>
         </div>
     
         <div class="row">
@@ -26,7 +27,7 @@
                     </div>
     
                     <div class="form-group">
-                        {!! Form::label('password_confirmation', 'パスワードもう一回　(ごめん！)') !!}
+                        {!! Form::label('password_confirmation', 'パスワード　(確認)') !!}
                         {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                     </div>
                    {!! Form::submit('ユーザー登録', ['class' => 'btn btn-primary btn-block']) !!}

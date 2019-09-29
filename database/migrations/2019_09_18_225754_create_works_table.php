@@ -26,6 +26,8 @@ class CreateWorksTable extends Migration
             $table->string('itemName');
             $table->string('imageUrl');
             $table->string('itemUrl');
+            $table->string('worksName');
+            $table->string('worksStory');
             
             //タイムスタンプ
             $table->timestamps();

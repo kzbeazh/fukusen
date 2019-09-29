@@ -7,6 +7,7 @@
         <div class="col-md-3"> 
              @include('users.prof')
              <br>
+             <h3><span class="my-parts" style="font-size: 20px;">ユーザー画像を変更</span></h3>
              @if ($user->id == \Auth::user()->id)
                 <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data">
                 <!-- アップロードフォームの作成 -->

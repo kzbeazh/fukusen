@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#141f33;">
         <img src="https://pbs.twimg.com/profile_images/503398857430937600/qkAjKBDv_400x400.jpeg" style="height: 50px; width: auto;"> 
         <a class="navbar-brand" href="/" style="margin-left: 20px;">伏線すげぇ.work</a>
@@ -29,5 +29,4 @@
             </ul>
         </div>
     </nav>
-
 </header>

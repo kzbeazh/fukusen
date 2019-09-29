@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center">
-            <h1>ログインしよう！</h1>
+            <br>
+            <h1>ログイン！</h1>
         </div>
     
         <div class="row">
@@ -23,7 +24,6 @@
                     {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
                 {!! Form::close() !!}
     
-                <p class="mt-2">新人ですか? {!! link_to_route('signup.get', '今すぐユーザー登録!') !!}</p>
             </div>
         </div>
     </div>

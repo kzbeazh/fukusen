@@ -2,15 +2,12 @@
 
 @section('content')
         <div class="top-wrapper">
-        @include('commons.authtop')
+            @include('commons.authtop')
             <div class="container">
+                <button type="button" class="btn btn-lg btn-info" disabled>検索結果は{{ $workscnt }}件です。</button>
+                <br><br>
                 @include('commons.navtab')
                 @include('eachWorks.eachWorks')
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            {{ $works->links() }}
-        </div>
-
 @endsection
-

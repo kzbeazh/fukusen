@@ -52,6 +52,7 @@ class WorksController extends Controller
         $itemName = $items[0]->Item->itemName;
         $imageUrl = $items[0]->Item->mediumImageUrls[0]->imageUrl;
         $itemUrl = $items[0]->Item->itemUrl;
+        $itemCaption = $items[0]->Item->itemCaption;
         
         $data = [
             'response' => $response,
@@ -59,6 +60,7 @@ class WorksController extends Controller
             'itemName' => $itemName,
             'imageUrl' => $imageUrl,
             'itemUrl' => $itemUrl,
+            'itemCaption' => $itemCaption,
         ];
         
         return view('works.worksCreate', $data);
@@ -80,6 +82,8 @@ class WorksController extends Controller
             'worksCategory' => 'required|max:191',
             'worksMunakuso' => 'required|max:191',
             'worksComment' => 'required|max:191',
+            'worksName' => 'required|max:191',
+            'worksStory' => 'required|max:191',
         ]);
         
         $work = new Work;
@@ -93,6 +97,8 @@ class WorksController extends Controller
         $work->itemName = $request->itemName;
         $work->imageUrl = $request->imageUrl;
         $work->itemUrl = $request->itemUrl;
+        $work->worksName = $request->worksName;
+        $work->worksStory = $request->worksStory;
         $work->save();
         
         return redirect('/');
@@ -225,7 +231,20 @@ class WorksController extends Controller
 //        dd($comment);
                 
         return back();
-    }    
+    }
+    
+//topの検索画面
+    public function worksshow(Request $request)
+    {
+        $works = Work::where('itemName', 'LIKE', '%' . $request->searchword . '%')->get();
+        $workscnt = count($works);
+//        dd($workscnt);
+        
+        return view('kinds.searchResult', [
+            'works' => $works,
+            'workscnt' => $workscnt,
+        ]);
+    }
 
     
 //関数//

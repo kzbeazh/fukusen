@@ -17,7 +17,7 @@ class FukusenController extends Controller
     {
         //
         if (\Auth::check()) {
-            $works = Work::orderBy('created_at', 'desc')->paginate();
+            $works = Work::orderBy('created_at', 'desc')->paginate(6);
         }
         
         else{
